@@ -35,8 +35,8 @@ public class BookController {
         return ResponseEntity.ok(bookService.update(title, isbn));
     }
 
-    @DeleteMapping("/isbn")
-    public ResponseEntity<Book> deleteByIsbn(@PathVariable String isbn) {
-        return ResponseEntity.ok(bookService.delete(isbn));
+    @DeleteMapping("/{isbn}")
+    public ResponseEntity<String> deleteByIsbn(@PathVariable String isbn) {
+        return ResponseEntity.ok("Records deleted: "+bookService.delete(isbn));
     }
 }

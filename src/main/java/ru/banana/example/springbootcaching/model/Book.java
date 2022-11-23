@@ -3,11 +3,12 @@ package ru.banana.example.springbootcaching.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "books")
 @Data
-public class Book {
+public class Book implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
